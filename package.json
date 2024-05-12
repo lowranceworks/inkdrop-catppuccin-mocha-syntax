@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "name": "catppuccin-mocha",
+  "description": "Catppuccin mocha syntax theme",
+  "theme": "syntax",
+  "scripts": {
+    "build": "lessc styles/less/default.less ./styles/catppuccin-mocha.css"
+  },
+  "styleSheets": [
+    "catppuccin-mocha.css"
+  ],
+  "engines": {
+    "inkdrop": "^5.x"
+  },
+  "devDependencies": {
+    "less": "^3.11.3"
+  }
+}
