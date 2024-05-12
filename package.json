@@ -1,7 +1,8 @@
 {
-  "version": "1.0.0",
+  "version": "0.0.0",
   "name": "catppuccin-mocha",
   "description": "Catppuccin mocha syntax theme",
+  "repository": "https://github.com/lowranceworks/inkdrop-catppuccin-mocha-syntax",
   "theme": "syntax",
   "scripts": {
     "build": "lessc styles/less/default.less ./styles/catppuccin-mocha.css"
