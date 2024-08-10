@@ -46,7 +46,7 @@
     }
     .CodeMirror-cursor {
       /* The cursor */
-      border-left: 1px solid var(--base00);
+      border-left: 1px solid var(--base04);
     }
     .CodeMirror-matchingbracket,
     .CodeMirror-matchingtag {
