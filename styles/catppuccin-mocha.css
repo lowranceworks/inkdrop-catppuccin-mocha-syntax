@@ -1,51 +1,52 @@
 .editor {
-/* Main background color */
-  --base00: #1e1e2e;
+  /* Main background color */
+  --base00: #1e1e2e; /* Base */
 
   /* Alternative background (darker) */
-  --base01: #181825;
+  --base01: #181825; /* Mantle */
 
   /* Main text color / un-styled text */
-  --base02: #89b4fa;
+  --base02: #cdd6f4; /* Text */
 
   /* Line numbers, comments, fold arrows */
-  --base03: #7f849c;
+  --base03: #7f849c; /* Overlay 1 */
 
   /* Cursor color, inline code text */
-  --base04: #a6adc8;
+  --base04: #a6adc8; /* Subtext 0 */
 
   /* Text selection (highlighted text) */
-  --base05: #bac2de;
+  --base05: #45475a; /* Surface 1 */
 
   /* Active line background */
-  --base06: #cdd6f4;
+  --base06: #313244; /* Surface 0 */
 
   /* Duplicate of base02 */
-  --base07: #89b4fa;
+  --base07: #89b4fa; /* Blue */
 
   /* Fat cursor, matching brackets/tags, qualifiers/builtin/tags */
-  --base08: #94e2d5;
+  --base08: #94e2d5; /* Teal */
 
   /* URLs, strings, hr elements */
-  --base09: #a6e3a1;
+  --base09: #a6e3a1; /* Green */
 
   /* Keywords, headers, variables, numbers, attributes */
-  --base0A: #f9e2af;
+  --base0A: #f9e2af; /* Yellow */
 
   /* Errors, minus signs, strong text, bare links */
-  --base0B: #f38ba8;
+  --base0B: #f38ba8; /* Red */
 
   /* Atoms, definitions, properties, range info, search results, emphasized text */
-  --base0C: #fab387;
+  --base0C: #fab387; /* Peach */
 
   /* Search current match */
-  --base0D: #f5c2e7;
+  --base0D: #f5c2e7; /* Pink */
 
   /* Operators, meta, brackets, links, table separators */
-  --base0E: #cba6f7;
+  --base0E: #cba6f7; /* Mauve */
 
   /* Quotes */
-  --base0F: #94e2d5;
+  --base0F: #94e2d5; /* Teal */
+}
 
   .CodeMirror {
     /* Background color of main window */
