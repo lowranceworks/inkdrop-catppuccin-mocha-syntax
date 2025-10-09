@@ -1,209 +1,288 @@
 .editor {
-  --base00: #1e1e2e;
-  --base01: #181825;
-  --base02: #89b4fa;
-  --base03: #45475a;
-  --base04: #a6adc8;
-  --base05: #bac2de;
-  --base06: #cdd6f4;
-  --base07: #89b4fa;
-  --base08: #94e2d5;
-  --base09: #a6e3a1;
-
-  --base0A: #f9e2af;
-  --base0B: #f38ba8;
-  --base0C: #fab387;
-  --base0D: #f5c2e7;
-  --base0E: #cba6f7;
-  --base0F: #94e2d5;
+  /* Catppuccin Mocha Palette */
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
 
   .CodeMirror {
-    /* Background color of main window */
-    background-color: #ffffff;
-    color: var(--base02);
-    --fat-cursor-color: var(--base08);
+    background-color: transparent;
+    color: var(--ctp-text);
+    --fat-cursor-color: var(--ctp-rosewater);
 
     .CodeMirror-scroll {
-      /* Color of otherwise un-styled text */
-      color: var(--base02);
+      color: var(--ctp-text);
     }
+
     .CodeMirror-gutters {
-      /* Gutter to the left */
-      background-color: #ffffff;
+      background-color: transparent;
+      border-right: 1px solid var(--ctp-surface0);
     }
+
     .CodeMirror-linenumber {
-      /* Line numbers in the gutter */
-      color: var(--base03);
-      opacity: 0.6;
+      color: var(--ctp-overlay1);
+      opacity: 0.8;
     }
+
     .CodeMirror-selected {
-      /* Highlighted text */
-      background-color: var(--base05);
+      background-color: var(--ctp-surface0);
     }
+
     .CodeMirror-focused .CodeMirror-selected {
-      /* Highlighted text */
-      background-color: var(--base04);
+      background-color: var(--ctp-surface1);
     }
+
     .CodeMirror-cursor {
-      /* The cursor */
-      border-left: 1px solid var(--base04);
+      border-left: 1px solid var(--ctp-rosewater);
     }
+
     .CodeMirror-matchingbracket,
     .CodeMirror-matchingtag {
-      /* When you click a tag/bracket and the matching one is highlighted */
-      background: var(--base03) !important;
-      border-bottom: 1px solid var(--base08) !important;
+      background: var(--ctp-surface2) !important;
+      border-bottom: 1px solid var(--ctp-peach) !important;
     }
+
     .CodeMirror-foldgutter-open:after {
-      /* Those little arrows in the gutter */
-      color: var(--base03);
+      color: var(--ctp-overlay1);
     }
+
     .CodeMirror-foldgutter-folded:after {
-      /* The arrows after you collapse code */
-      color: var(--base03);
+      color: var(--ctp-overlay1);
     }
+
     .CodeMirror.over-gutter,
     .CodeMirror-activeline {
       .CodeMirror-foldgutter-open:after {
-        /* Arrows when hovering on the gutter */
-        color: var(--base03);
+        color: var(--ctp-overlay2);
       }
     }
+
     .CodeMirror-foldmarker {
-      /* The [...] marking collapsed code */
-      border-color: var(--base03);
-      background-color: var(--base03);
-      color: var(--base02);
+      border-color: var(--ctp-overlay1);
+      background-color: var(--ctp-surface1);
+      color: var(--ctp-text);
     }
+
     .CodeMirror .CodeMirror-linewidget img.inline-widget {
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(0, 0, 0, 0.2);
     }
+
     .CodeMirror-searching {
-      /* Ctrl + F results */
-      background-color: var(--base0D);
-      /* Selected result */
+      background-color: var(--ctp-yellow);
+      color: var(--ctp-base);
+
       &.searching-current-match {
-        background-color: var(--base0C);
+        background-color: var(--ctp-peach);
+        color: var(--ctp-base);
       }
     }
   }
 
-  /* All 'dem swatches */
-
+  /* Syntax Highlighting */
   .CodeMirror {
+    /* Markdown quotes and blockquotes */
     .cm-quote {
-      color: var(--base0F);
+      color: var(--ctp-subtext0);
       font-style: italic;
     }
+
+    /* Atoms, list markers (unordered) */
     .cm-atom,
     .cm-formatting-list.cm-variable-3 {
-      color: var(--base0C);
+      color: var(--ctp-sky);
     }
 
+    /* Keywords, ordered list markers */
     .cm-keyword,
     .cm-formatting-list.cm-variable-2 {
-      color: var(--base0A);
+      color: var(--ctp-mauve);
     }
 
-    .cm-url,
-    .cm-string,
-    .cm-string-2,
-    .cm-hr {
-      color: var(--base09);
+    /* URLs */
+    .cm-url {
+      color: var(--ctp-blue);
+      text-decoration: underline;
+      text-underline-position: under;
     }
+
+    /* Strings */
+    .cm-string,
+    .cm-string-2 {
+      color: var(--ctp-green);
+    }
+
+    /* Horizontal rules */
+    .cm-hr {
+      color: var(--ctp-overlay2);
+    }
+
+    /* Numbers, attributes */
     .cm-number,
     .cm-attribute,
     .cm-plus {
-      color: var(--base0A);
+      color: var(--ctp-peach);
     }
+
+    /* Definitions, properties */
     .cm-def,
     .cm-property {
-      color: var(--base0C);
+      color: var(--ctp-teal);
     }
+
+    /* Variables */
     .cm-variable {
-      color: var(--base0A);
+      color: var(--ctp-text);
     }
+
+    /* Operators, meta, brackets */
     .cm-operator,
     .cm-meta,
     .cm-bracket {
-      color: var(--base0E);
+      color: var(--ctp-sky);
     }
+
+    /* Comments */
     .cm-comment {
-      color: var(--base03);
+      color: var(--ctp-overlay0);
       font-style: italic;
     }
+
+    /* Errors */
     .cm-error,
     .cm-minus {
-      color: var(--base0B);
+      color: var(--ctp-red);
     }
+
+    /* Headers - formatting marks (## symbols) */
     .cm-formatting-header {
-      opacity: 0.3;
+      color: var(--ctp-peach);
+      font-weight: normal;
+      opacity: 0.8;
     }
+
+    /* Headers - text content */
     .cm-header {
-      color: var(--base0A);
+      color: var(--ctp-peach);
+      font-weight: bold;
     }
+
+    /* Links */
     .cm-link {
-      color: var(--base0E);
+      color: var(--ctp-blue);
+      text-decoration: underline;
       text-underline-position: under;
     }
+
+    /* Range info */
     .cm-rangeinfo {
-      color: var(--base0C);
+      color: var(--ctp-lavender);
     }
+
+    /* Qualifiers, builtins, tags */
     .cm-qualifier,
     .cm-builtin,
     .cm-tag {
-      color: var(--base08);
+      color: var(--ctp-sapphire);
     }
+
+    /* Whitespace indicators */
     .cm-whitespace::before {
-      color: var(--base04);
-      opacity: 0.4;
+      color: var(--ctp-overlay0);
+      opacity: 0.3;
     }
-    .cm-formatting-quote,
-    .cm-formatting-strong,
-    .cm-formatting-em {
+
+    /* Formatting marks for emphasis */
+    .cm-formatting-quote {
+      color: var(--ctp-overlay1);
       opacity: 0.6;
     }
-    .cm-strong {
-      color: var(--base0B);
-    }
-    .cm-em {
-      color: var(--base0C);
+
+    .cm-formatting-strong,
+    .cm-formatting-em {
+      color: var(--ctp-maroon);
+      opacity: 0.7;
     }
 
-    /* carriage return */
+    /* Bold text */
+    .cm-strong {
+      color: var(--ctp-maroon);
+      font-weight: bold;
+    }
+
+    /* Italic text */
+    .cm-em {
+      color: var(--ctp-maroon);
+      font-style: italic;
+    }
+
+    /* Carriage return indicator */
     .CodeMirror-code > div > pre > span::after,
     .CodeMirror-line > span::after {
-      color: var(--base00);
-      opacity: 0.4;
+      color: var(--ctp-overlay0);
+      opacity: 0.3;
     }
 
+    /* Inline code */
     .cm-inline-code {
-      background: rgba(0, 0, 0, 0.02);
-      color: var(--base04);
+      background: var(--ctp-surface0);
+      color: var(--ctp-teal);
+      padding: 2px 4px;
+      border-radius: 3px;
     }
 
+    /* Code block background */
     .gfm-codeblock-bg.CodeMirror-linebackground {
-      background: rgba(0, 0, 0, 0.01);
+      background: var(--ctp-mantle);
     }
 
+    /* Table separators and first row */
     .cm-table-sep,
     .table-row.table-row-1 {
-      color: var(--base0E);
+      color: var(--ctp-overlay2);
     }
 
+    /* Bare links in quotes */
     .cm-quote.cm-link-barelink {
       font-style: normal;
-      color: var(--base0B);
+      color: var(--ctp-blue);
+    }
+
+    /* Strikethrough */
+    .cm-strikethrough {
+      color: var(--ctp-overlay1);
+      text-decoration: line-through;
     }
   }
 
-  /* Active Line Highlight support */
+  /* Active Line Highlight */
   .CodeMirror-activeline-background,
   .CodeMirror-activeline-gutter {
     background-color: color-mix(
       in srgb,
-      var(--base06),
-      transparent 70%
+      var(--ctp-surface0),
+      transparent 50%
     ) !important;
   }
 }
