@@ -20,14 +20,14 @@
   /* Active line background */
   --base06: #313244; /* Surface 0 */
 
-  /* Duplicate of base02 */
-  --base07: #89b4fa; /* Blue */
+  /* Duplicate of base02 (match main text) */
+  --base07: #cdd6f4; /* Text */
 
   /* Fat cursor, matching brackets/tags, qualifiers/builtin/tags */
-  --base08: #94e2d5; /* Teal */
+  --base08: #89b4fa; /* Blue */
 
   /* URLs, strings, hr elements */
-  --base09: #a6e3a1; /* Green */
+  --base09: #89dceb; /* Sky */
 
   /* Keywords, headers, variables, numbers, attributes */
   --base0A: #f9e2af; /* Yellow */
