@@ -50,7 +50,7 @@
 
   .CodeMirror {
     /* Background color of main window */
-    background-color: #ffffff;
+    background-color: var(--base00);  /* Changed from #ffffff */
     color: var(--base02);
     --fat-cursor-color: var(--base08);
 
@@ -60,7 +60,7 @@
     }
     .CodeMirror-gutters {
       /* Gutter to the left */
-      background-color: #ffffff;
+      background-color: var(--base00);  /* Changed from #ffffff */
     }
     .CodeMirror-linenumber {
       /* Line numbers in the gutter */
