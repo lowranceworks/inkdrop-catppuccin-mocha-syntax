@@ -1,20 +1,50 @@
 .editor {
+/* Main background color */
   --base00: #1e1e2e;
+
+  /* Alternative background (darker) */
   --base01: #181825;
+
+  /* Main text color / un-styled text */
   --base02: #89b4fa;
+
+  /* Line numbers, comments, fold arrows */
   --base03: #7f849c;
+
+  /* Cursor color, inline code text */
   --base04: #a6adc8;
+
+  /* Text selection (highlighted text) */
   --base05: #bac2de;
+
+  /* Active line background */
   --base06: #cdd6f4;
+
+  /* Duplicate of base02 */
   --base07: #89b4fa;
+
+  /* Fat cursor, matching brackets/tags, qualifiers/builtin/tags */
   --base08: #94e2d5;
+
+  /* URLs, strings, hr elements */
   --base09: #a6e3a1;
 
+  /* Keywords, headers, variables, numbers, attributes */
   --base0A: #f9e2af;
+
+  /* Errors, minus signs, strong text, bare links */
   --base0B: #f38ba8;
+
+  /* Atoms, definitions, properties, range info, search results, emphasized text */
   --base0C: #fab387;
+
+  /* Search current match */
   --base0D: #f5c2e7;
+
+  /* Operators, meta, brackets, links, table separators */
   --base0E: #cba6f7;
+
+  /* Quotes */
   --base0F: #94e2d5;
 
   .CodeMirror {
