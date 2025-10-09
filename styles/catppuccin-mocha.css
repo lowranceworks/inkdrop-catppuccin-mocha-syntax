@@ -14,7 +14,7 @@
   --ctp-sapphire: #74c7ec;
   --ctp-blue: #89b4fa;
   --ctp-lavender: #b4befe;
-  --ctp-text: #cdd6f4;
+  --ctp-text: #ffffff;
   --ctp-subtext1: #bac2de;
   --ctp-subtext0: #a6adc8;
   --ctp-overlay2: #9399b2;
@@ -102,40 +102,20 @@
 
   /* Syntax Highlighting */
   .CodeMirror {
-    /* Markdown quotes and blockquotes */
-    .cm-quote {
-      color: var(--ctp-subtext0);
-      font-style: italic;
+    /* Variables */
+    .cm-variable {
+      color: var(--ctp-text);
     }
 
-    /* Atoms, list markers (unordered) */
-    .cm-atom,
-    .cm-formatting-list.cm-variable-3 {
-      color: var(--ctp-sky);
-    }
-
-    /* Keywords, ordered list markers */
-    .cm-keyword,
-    .cm-formatting-list.cm-variable-2 {
+    /* Keywords */
+    .cm-keyword {
       color: var(--ctp-mauve);
-    }
-
-    /* URLs */
-    .cm-url {
-      color: var(--ctp-blue);
-      text-decoration: underline;
-      text-underline-position: under;
     }
 
     /* Strings */
     .cm-string,
     .cm-string-2 {
       color: var(--ctp-green);
-    }
-
-    /* Horizontal rules */
-    .cm-hr {
-      color: var(--ctp-overlay2);
     }
 
     /* Numbers, attributes */
@@ -145,15 +125,14 @@
       color: var(--ctp-peach);
     }
 
-    /* Definitions, properties */
-    .cm-def,
-    .cm-property {
-      color: var(--ctp-teal);
+    /* Function definitions */
+    .cm-def {
+      color: var(--ctp-blue);
     }
 
-    /* Variables */
-    .cm-variable {
-      color: var(--ctp-text);
+    /* Properties - but NOT when it's part of a URL or task checkbox */
+    .cm-property:not(.cm-url):not(.cm-formatting-task) {
+      color: var(--ctp-blue);
     }
 
     /* Operators, meta, brackets */
@@ -175,24 +154,52 @@
       color: var(--ctp-red);
     }
 
-    /* Headers - formatting marks (## symbols) */
-    .cm-formatting-header {
-      color: var(--ctp-peach);
-      font-weight: normal;
-      opacity: 0.8;
+    /* Escape characters - both backslash and the escaped character */
+    .cm-escape,
+    .cm-formatting-escape {
+      color: var(--ctp-pink);
     }
 
-    /* Headers - text content */
-    .cm-header {
-      color: var(--ctp-peach);
-      font-weight: bold;
+    /* Footnote link formatting brackets */
+    .cm-formatting-link.cm-link-footnote {
+      color: var(--ctp-pink);
     }
 
-    /* Links */
-    .cm-link {
+    /* Qualifiers, builtins, tags, class names */
+    .cm-qualifier,
+    .cm-builtin {
+      color: var(--ctp-yellow);
+    }
+
+    /* HTML tag brackets (< > </ />) */
+    .cm-tag.cm-bracket {
+      color: var(--ctp-teal);
+    }
+
+    /* HTML tag names (the actual tag name like dl, dt, dd, em) */
+    .cm-tag:not(.cm-bracket) {
       color: var(--ctp-blue);
-      text-decoration: underline;
-      text-underline-position: under;
+    }
+
+    /* Atoms */
+    .cm-atom {
+      color: var(--ctp-sky);
+    }
+
+    /* Markdown quotes and blockquotes */
+    .cm-quote {
+      color: var(--ctp-pink);
+      font-style: italic;
+    }
+
+    /* List markers inside blockquotes */
+    .cm-indent-in-quote {
+      color: var(--ctp-teal);
+    }
+
+    /* Horizontal rules */
+    .cm-hr {
+      color: var(--ctp-pink);
     }
 
     /* Range info */
@@ -200,11 +207,160 @@
       color: var(--ctp-lavender);
     }
 
-    /* Qualifiers, builtins, tags */
-    .cm-qualifier,
-    .cm-builtin,
-    .cm-tag {
-      color: var(--ctp-sapphire);
+    /* Headers - formatting marks (## symbols) */
+    .cm-formatting-header {
+      font-weight: normal;
+      opacity: 0.8;
+    }
+
+    /* H1 Headers */
+    .cm-formatting-header.cm-formatting-header-1 {
+      color: var(--ctp-red);
+    }
+    .cm-header.cm-header-1 {
+      color: var(--ctp-red);
+      font-weight: bold;
+    }
+
+    /* H2 Headers */
+    .cm-formatting-header.cm-formatting-header-2 {
+      color: var(--ctp-peach);
+    }
+    .cm-header.cm-header-2 {
+      color: var(--ctp-peach);
+      font-weight: bold;
+    }
+
+    /* H3 Headers */
+    .cm-formatting-header.cm-formatting-header-3 {
+      color: var(--ctp-yellow);
+    }
+    .cm-header.cm-header-3 {
+      color: var(--ctp-yellow);
+      font-weight: bold;
+    }
+
+    /* H4 Headers */
+    .cm-formatting-header.cm-formatting-header-4 {
+      color: var(--ctp-green);
+    }
+    .cm-header.cm-header-4 {
+      color: var(--ctp-green);
+      font-weight: bold;
+    }
+
+    /* H5 Headers */
+    .cm-formatting-header.cm-formatting-header-5 {
+      color: var(--ctp-sky);
+    }
+    .cm-header.cm-header-5 {
+      color: var(--ctp-sky);
+      font-weight: bold;
+    }
+
+    /* H6 Headers */
+    .cm-formatting-header.cm-formatting-header-6 {
+      color: var(--ctp-lavender);
+    }
+    .cm-header.cm-header-6 {
+      color: var(--ctp-lavender);
+      font-weight: bold;
+    }
+
+    /* Unordered list markers (*, -, +) */
+    .cm-formatting-list.cm-variable-3 {
+      color: var(--ctp-sky);
+    }
+
+    /* Ordered list markers (1., 2., 3.) */
+    .cm-formatting-list.cm-variable-2 {
+      color: var(--ctp-teal);
+    }
+
+    /* Task list - completed checkbox [x] */
+    .cm-formatting-task.cm-property {
+      color: var(--ctp-green);
+    }
+
+    /* Task list - incomplete checkbox [ ] */
+    .cm-formatting-task {
+      color: var(--ctp-overlay1);
+    }
+
+    /* Links (the link text in brackets) */
+    .cm-link {
+      color: var(--ctp-lavender);
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+
+    /* URLs - needs high specificity to override .cm-string and .cm-property */
+    .cm-url,
+    .cm-string.cm-url,
+    .cm-property.cm-url {
+      color: var(--ctp-blue) !important;
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+
+    /* Bare URLs in angle brackets */
+    .cm-link-barelink {
+      color: var(--ctp-blue);
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+
+    /* Angle brackets for bare URLs */
+    .cm-formatting-link.cm-link {
+      color: var(--ctp-blue);
+    }
+
+    /* Bare links in quotes - keep blue */
+    .cm-quote.cm-link-barelink {
+      font-style: normal;
+      color: var(--ctp-blue);
+    }
+
+    /* Formatting marks for emphasis */
+    .cm-formatting-strong {
+      color: var(--ctp-red);
+      opacity: 0.7;
+    }
+
+    /* Italic formatting marks - red by default */
+    .cm-formatting-em {
+      color: var(--ctp-red);
+      opacity: 0.7;
+    }
+
+    /* Abbreviation definition asterisk - make plain text (only when followed by a link) */
+    .cm-formatting-em.cm-em:has(+ .cm-formatting-link.cm-link-footnote) {
+      color: var(--ctp-text);
+      font-style: normal;
+      opacity: 1;
+    }
+
+    /* Bold text */
+    .cm-strong {
+      color: var(--ctp-red);
+      font-weight: bold;
+    }
+
+    /* Italic text */
+    .cm-em {
+      color: var(--ctp-red);
+      font-style: italic;
+    }
+
+    /* Footnote/abbreviation links - override red with lavender */
+    .cm-em.cm-link.cm-link-footnote {
+      color: var(--ctp-lavender);
+    }
+
+    /* Strikethrough */
+    .cm-strikethrough {
+      color: var(--ctp-overlay1);
+      text-decoration: line-through;
     }
 
     /* Whitespace indicators */
@@ -213,28 +369,22 @@
       opacity: 0.3;
     }
 
-    /* Formatting marks for emphasis */
-    .cm-formatting-quote {
-      color: var(--ctp-overlay1);
-      opacity: 0.6;
+    /* Footnote/abbreviation links */
+    .cm-em.cm-link.cm-link-footnote {
+      color: var(--ctp-lavender);
     }
 
-    .cm-formatting-strong,
-    .cm-formatting-em {
-      color: var(--ctp-maroon);
-      opacity: 0.7;
+    /* Abbreviation definition - colon and description should be plain text */
+    .cm-em.cm-link-footnote-definition,
+    .cm-link-footnote-definition {
+      color: var(--ctp-text);
+      font-style: normal;
     }
 
-    /* Bold text */
-    .cm-strong {
-      color: var(--ctp-maroon);
-      font-weight: bold;
-    }
-
-    /* Italic text */
-    .cm-em {
-      color: var(--ctp-maroon);
-      font-style: italic;
+    /* Abbreviation definition - colon and description text after the footnote link */
+    .cm-link-footnote ~ .cm-em {
+      color: var(--ctp-text);
+      font-style: normal;
     }
 
     /* Carriage return indicator */
@@ -246,9 +396,7 @@
 
     /* Inline code */
     .cm-inline-code {
-      background: var(--ctp-surface0);
-      color: var(--ctp-teal);
-      padding: 2px 4px;
+      color: var(--ctp-green);
       border-radius: 3px;
     }
 
@@ -257,22 +405,25 @@
       background: var(--ctp-mantle);
     }
 
-    /* Table separators and first row */
-    .cm-table-sep,
+    /* Table styling */
+    /* Table pipes/separators */
+    .cm-table-sep {
+      color: var(--ctp-pink);
+    }
+
+    /* Table header row (dashes) */
     .table-row.table-row-1 {
-      color: var(--ctp-overlay2);
+      color: var(--ctp-pink);
     }
 
-    /* Bare links in quotes */
-    .cm-quote.cm-link-barelink {
-      font-style: normal;
-      color: var(--ctp-blue);
+    /* Table headers (first row content) */
+    .cm-table-header {
+      font-weight: 600;
     }
 
-    /* Strikethrough */
-    .cm-strikethrough {
-      color: var(--ctp-overlay1);
-      text-decoration: line-through;
+    /* Alternative: if headers have a specific class */
+    .table-row.table-row-0 {
+      font-weight: 600;
     }
   }
 

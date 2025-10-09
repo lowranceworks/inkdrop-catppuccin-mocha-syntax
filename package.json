@@ -1,7 +1,7 @@
 {
   "version": "1.1.0",
   "name": "catppuccin-mocha",
-  "description": "Catppuccin mocha syntax theme",
+  "description": "Catppuccin Mocha syntax theme",
   "repository": "https://github.com/lowranceworks/inkdrop-catppuccin-mocha-syntax",
   "theme": "syntax",
   "scripts": {
