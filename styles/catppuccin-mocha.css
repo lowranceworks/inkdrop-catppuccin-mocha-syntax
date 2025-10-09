@@ -1,120 +1,119 @@
 .editor {
   /* Main background color */
-  --base00: #1e1e2e; /* Base */
+  --base: #1e1e2e; /* Base */
 
   /* Alternative background (darker) */
-  --base01: #181825; /* Mantle */
+  --mantle: #181825; /* Mantle */
 
   /* Main text color / un-styled text */
-  --base02: #cdd6f4; /* Text */
+  --text: #cdd6f4; /* Text */
 
   /* Line numbers, comments, fold arrows */
-  --base03: #7f849c; /* Overlay 1 */
+  --overlay1: #7f849c; /* Overlay 1 */
 
   /* Cursor color, inline code text */
-  --base04: #a6adc8; /* Subtext 0 */
+  --subtext0: #a6adc8; /* Subtext 0 */
 
   /* Text selection (highlighted text) */
-  --base05: #45475a; /* Surface 1 */
+  --surface1: #45475a; /* Surface 1 */
 
   /* Active line background */
-  --base06: #313244; /* Surface 0 */
+  --surface0: #313244; /* Surface 0 */
 
-  /* Duplicate of base02 (match main text) */
-  --base07: #cdd6f4; /* Text */
+  /* Duplicate of text */
+  --text-alt: #cdd6f4; /* Text */
 
   /* Fat cursor, matching brackets/tags, qualifiers/builtin/tags */
-  --base08: #89b4fa; /* Blue */
+  --blue: #89b4fa; /* Blue */
 
   /* URLs, strings, hr elements */
-  --base09: #89dceb; /* Sky */
+  --sky: #89dceb; /* Sky */
 
   /* Keywords, headers, variables, numbers, attributes */
-  --base0A: #f9e2af; /* Yellow */
+  --yellow: #f9e2af; /* Yellow */
 
   /* Errors, minus signs, strong text, bare links */
-  --base0B: #f38ba8; /* Red */
+  --red: #f38ba8; /* Red */
 
   /* Atoms, definitions, properties, range info, search results, emphasized text */
-  --base0C: #fab387; /* Peach */
+  --peach: #fab387; /* Peach */
 
   /* Search current match */
-  --base0D: #f5c2e7; /* Pink */
+  --pink: #f5c2e7; /* Pink */
 
   /* Operators, meta, brackets, links, table separators */
-  --base0E: #cba6f7; /* Mauve */
+  --mauve: #cba6f7; /* Mauve */
 
   /* Quotes */
-  --base0F: #94e2d5; /* Teal */
-}
+  --teal: #94e2d5; /* Teal */
 
   .CodeMirror {
     /* Background color of main window */
-    background-color: var(--base00);  /* Changed from #ffffff */
-    color: var(--base02);
-    --fat-cursor-color: var(--base08);
+    background-color: var(--base);
+    color: var(--text);
+    --fat-cursor-color: var(--blue);
 
     .CodeMirror-scroll {
       /* Color of otherwise un-styled text */
-      color: var(--base02);
+      color: var(--text);
     }
     .CodeMirror-gutters {
       /* Gutter to the left */
-      background-color: var(--base00);  /* Changed from #ffffff */
+      background-color: var(--base);
     }
     .CodeMirror-linenumber {
       /* Line numbers in the gutter */
-      color: var(--base03);
+      color: var(--overlay1);
       opacity: 0.6;
     }
     .CodeMirror-selected {
       /* Highlighted text */
-      background-color: var(--base05);
+      background-color: var(--surface1);
     }
     .CodeMirror-focused .CodeMirror-selected {
       /* Highlighted text */
-      background-color: var(--base04);
+      background-color: var(--subtext0);
     }
     .CodeMirror-cursor {
       /* The cursor */
-      border-left: 1px solid var(--base04);
+      border-left: 1px solid var(--subtext0);
     }
     .CodeMirror-matchingbracket,
     .CodeMirror-matchingtag {
       /* When you click a tag/bracket and the matching one is highlighted */
-      background: var(--base03) !important;
-      border-bottom: 1px solid var(--base08) !important;
+      background: var(--overlay1) !important;
+      border-bottom: 1px solid var(--blue) !important;
     }
     .CodeMirror-foldgutter-open:after {
       /* Those little arrows in the gutter */
-      color: var(--base03);
+      color: var(--overlay1);
     }
     .CodeMirror-foldgutter-folded:after {
       /* The arrows after you collapse code */
-      color: var(--base03);
+      color: var(--overlay1);
     }
     .CodeMirror.over-gutter,
     .CodeMirror-activeline {
       .CodeMirror-foldgutter-open:after {
         /* Arrows when hovering on the gutter */
-        color: var(--base03);
+        color: var(--overlay1);
       }
     }
     .CodeMirror-foldmarker {
       /* The [...] marking collapsed code */
-      border-color: var(--base03);
-      background-color: var(--base03);
-      color: var(--base02);
+      border-color: var(--overlay1);
+      background-color: var(--overlay1);
+      color: var(--text);
     }
     .CodeMirror .CodeMirror-linewidget img.inline-widget {
       background: rgba(0, 0, 0, 0.05);
     }
     .CodeMirror-searching {
       /* Ctrl + F results */
-      background-color: var(--base0D);
+      background-color: var(--pink);
       /* Selected result */
       &.searching-current-match {
-        background-color: var(--base0C);
+        background-color: var(--peach);
       }
     }
   }
@@ -123,70 +122,70 @@
 
   .CodeMirror {
     .cm-quote {
-      color: var(--base0F);
+      color: var(--teal);
       font-style: italic;
     }
     .cm-atom,
     .cm-formatting-list.cm-variable-3 {
-      color: var(--base0C);
+      color: var(--peach);
     }
 
     .cm-keyword,
     .cm-formatting-list.cm-variable-2 {
-      color: var(--base0A);
+      color: var(--yellow);
     }
 
     .cm-url,
     .cm-string,
     .cm-string-2,
     .cm-hr {
-      color: var(--base09);
+      color: var(--sky);
     }
     .cm-number,
     .cm-attribute,
     .cm-plus {
-      color: var(--base0A);
+      color: var(--yellow);
     }
     .cm-def,
     .cm-property {
-      color: var(--base0C);
+      color: var(--peach);
     }
     .cm-variable {
-      color: var(--base0A);
+      color: var(--yellow);
     }
     .cm-operator,
     .cm-meta,
     .cm-bracket {
-      color: var(--base0E);
+      color: var(--mauve);
     }
     .cm-comment {
-      color: var(--base03);
+      color: var(--overlay1);
       font-style: italic;
     }
     .cm-error,
     .cm-minus {
-      color: var(--base0B);
+      color: var(--red);
     }
     .cm-formatting-header {
       opacity: 0.3;
     }
     .cm-header {
-      color: var(--base0A);
+      color: var(--yellow);
     }
     .cm-link {
-      color: var(--base0E);
+      color: var(--mauve);
       text-underline-position: under;
     }
     .cm-rangeinfo {
-      color: var(--base0C);
+      color: var(--peach);
     }
     .cm-qualifier,
     .cm-builtin,
     .cm-tag {
-      color: var(--base08);
+      color: var(--blue);
     }
     .cm-whitespace::before {
-      color: var(--base04);
+      color: var(--subtext0);
       opacity: 0.4;
     }
     .cm-formatting-quote,
@@ -195,22 +194,22 @@
       opacity: 0.6;
     }
     .cm-strong {
-      color: var(--base0B);
+      color: var(--red);
     }
     .cm-em {
-      color: var(--base0C);
+      color: var(--peach);
     }
 
     /* carriage return */
     .CodeMirror-code > div > pre > span::after,
     .CodeMirror-line > span::after {
-      color: var(--base00);
+      color: var(--base);
       opacity: 0.4;
     }
 
     .cm-inline-code {
       background: rgba(0, 0, 0, 0.02);
-      color: var(--base04);
+      color: var(--subtext0);
     }
 
     .gfm-codeblock-bg.CodeMirror-linebackground {
@@ -219,12 +218,12 @@
 
     .cm-table-sep,
     .table-row.table-row-1 {
-      color: var(--base0E);
+      color: var(--sky);
     }
 
     .cm-quote.cm-link-barelink {
       font-style: normal;
-      color: var(--base0B);
+      color: var(--red);
     }
   }
 
@@ -233,7 +232,7 @@
   .CodeMirror-activeline-gutter {
     background-color: color-mix(
       in srgb,
-      var(--base06),
+      var(--surface0),
       transparent 70%
     ) !important;
   }
